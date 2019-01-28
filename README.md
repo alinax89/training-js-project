@@ -1,5 +1,3 @@
 # training-js-project
 
-js-TABS
-
-js-TIMER
+script.js file includes tab functions, timer
