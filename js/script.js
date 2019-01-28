@@ -44,7 +44,7 @@ window.addEventListener('DOMContentLoaded', function () {
             let t = Date.parse(endTime) - Date.parse(new Date()),
                 seconds = Math.floor((t / 1000) % 60),
                 minutes = Math.floor((t / 1000 / 60) % 60),
-                hours = Math.floor((t/(1000*60*60))),
+                hours = Math.floor((t / 1000 / 60 / 60)),
                 days = Math.floor((t / 1000 / 60 / 60 / 24));
             days = days < 10 ? '0' + days : days;
             hours = hours < 10 ? '0' + hours : hours;
