@@ -34,7 +34,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             }
-        })
+        });
 
         // ========== TIMER ========== //
 
@@ -87,5 +87,24 @@ window.addEventListener('DOMContentLoaded', function () {
         }
 
         setClock('timer', deadLine);
+
+        // ========== MODAL ========== //
+
+        let close = document.querySelector('.popup-close'),
+            overlay = document.querySelector('.overlay'),
+            more = document.querySelector('.more');
+
+        more.addEventListener('click', function () {
+            overlay.style.display = 'block';
+            overlay.classList.add('more-splash');
+            document.body.style.overflow = 'hidden'
+        });
+
+        close.addEventListener('click', function () {
+            overlay.style.display = 'none';
+            more.classList.remove('more-splash');
+        })
+
+
     }
 );
