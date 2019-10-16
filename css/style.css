@@ -717,3 +717,23 @@ header ul li:before {
 .overlay .popup-form__btn:hover {
   box-shadow: 0 0 10px #c78030;
 }
+
+.box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 200px;
+}
+
+.box__item {
+  padding: 10px;
+  color: #ffffff;
+  min-height: 200px;
+  width: 200px;
+  background: #000000;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px 1px #ffffff;
+}
