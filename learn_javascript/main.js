@@ -97,6 +97,16 @@
 //
 // console.log(multiplyNumeric(menu));
 // ==================================================================================================== //
+function sayHello(name){
+    return `Hello name ${name}`;
+}
+
+//sample usage
+console.log(sayHello("John"));
+
+https://dailycoding.io/article/DvGCn6zaVpEO5wXCLgsT
+    https://learnjavascript.online/app.html?id=22
+        https://www.freecodecamp.org/learn
 // ==================================================================================================== //
 
 // ==================================================================================================== //
