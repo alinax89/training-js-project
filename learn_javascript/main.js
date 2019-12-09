@@ -239,23 +239,47 @@
 // camelize("list-style-image") == 'listStyleImage';
 // camelize("-webkit-transition") == 'WebkitTransition';
 // P.S. Подсказка: используйте split, чтобы разбить строку на массив символов, потом переделайте всё как нужно и методом join соедините обратно.
-function camelize(str) {
-    return str
-        .split('-') // разбивает 'my-long-word' на массив ['my', 'long', 'word']
-        .map(
-            // Переводит в верхний регистр первые буквы всех элементом массива за исключением первого
-            // превращает ['my', 'long', 'word'] в ['my', 'Long', 'Word']
-            (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
-        )
-        .join(''); // соединяет ['my', 'Long', 'Word'] в 'myLongWord'
-}
-console.log(camelize("background-color"));
-console.log(camelize("list-style-image"));
-console.log(camelize("webkit"));
+// function camelize(str) {
+//     return str
+//         .split('-') // разбивает 'my-long-word' на массив ['my', 'long', 'word']
+//         .map(
+//             // Переводит в верхний регистр первые буквы всех элементом массива за исключением первого
+//             // превращает ['my', 'long', 'word'] в ['my', 'Long', 'Word']
+//             (word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1)
+//         )
+//         .join(''); // соединяет ['my', 'Long', 'Word'] в 'myLongWord'
+// }
+// console.log(camelize("background-color"));
+// console.log(camelize("list-style-image"));
+// console.log(camelize("-webkit"));
 // ==================================================================================================== //
+// Напишите функцию filterRange(arr, a, b), которая принимает массив arr, ищет в нём элементы между a и b и отдаёт массив этих элементов.
+// Функция должна возвращать новый массив и не изменять исходный.
+// let arr = [5, 3, 8, 1];
+// let filtered = filterRange(arr, 1, 4);
+// alert( filtered ); // 3,1 (совпадающие значения)
+// alert( arr ); // 5,3,8,1 (без изменений)
 
 // ==================================================================================================== //
-
+let newArr = {
+    age: 25,
+    names: ['Jonh', 'Alex', 'Dima', [1, '2', [3, 2, 34]] ],
+    year: 2020,
+    sex: {
+        woman: {
+            name: 'Tom',
+            age: 25
+        },
+        man: {
+            name: 'Tom',
+            age: 25
+        }
+    }
+};
+console.log(newArr);
+let parseArr = JSON.stringify(newArr);
+console.log(parseArr);
+console.log(JSON.parse(parseArr));
 // ==================================================================================================== //
 
 // ==================================================================================================== //
