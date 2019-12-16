@@ -247,6 +247,8 @@
 //             // превращает ['my', 'long', 'word'] в ['my', 'Long', 'Word']
 //             (word, index) => index === 0 ? word : word[0].toUpperCase() + word.slice(1)
 //         )
+//
+//
 //         .join(''); // соединяет ['my', 'Long', 'Word'] в 'myLongWord'
 // }
 // console.log(camelize("background-color"));
@@ -263,7 +265,7 @@
 // ==================================================================================================== //
 let newArr = {
     age: 25,
-    names: ['Jonh', 'Alex', 'Dima', [1, '2', [3, 2, 34]] ],
+    names: ['Jonh', 'Alex', 'Dima', [1, '2', [3, 2, 34]]],
     year: 2020,
     sex: {
         woman: {
@@ -280,6 +282,22 @@ console.log(newArr);
 let parseArr = JSON.stringify(newArr);
 console.log(parseArr);
 console.log(JSON.parse(parseArr));
+let str = "Hello";
+
+// делает то же самое, что и
+// for (let char of str) alert(char);
+let str = "Hello";
+
+// делает то же самое, что и
+// for (let char of str) alert(char);
+
+let iterator = str[Symbol.iterator]();
+
+while (true) {
+    let result = iterator.next();
+    if (result.done) break;
+    alert(result.value); // выводит символы один за другим
+}
 // ==================================================================================================== //
 
 // ==================================================================================================== //
