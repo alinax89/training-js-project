@@ -263,41 +263,44 @@
 // alert( arr ); // 5,3,8,1 (без изменений)
 
 // ==================================================================================================== //
-let newArr = {
-    age: 25,
-    names: ['Jonh', 'Alex', 'Dima', [1, '2', [3, 2, 34]]],
-    year: 2020,
-    sex: {
-        woman: {
-            name: 'Tom',
-            age: 25
-        },
-        man: {
-            name: 'Tom',
-            age: 25
-        }
-    }
+// let newArr = {
+//     age: 25,
+//     names: ['Jonh', 'Alex', 'Dima', [1, '2', [3, 2, 34]]],
+//     year: 2020,
+//     sex: {
+//         woman: {
+//             name: 'Tom',
+//             age: 25
+//         },
+//         man: {
+//             name: 'Tom',
+//             age: 25
+//         }
+//     }
+// };
+// console.log(newArr);
+// let parseArr = JSON.stringify(newArr);
+// console.log(parseArr);
+// console.log(JSON.parse(parseArr));
+
+// делает то же самое, что и
+// for (let char of str) alert(char);
+
+let newObj = {
+    name: 'Alex',
+    age: 23,
+    weight: 25,
+    names: ['alex', 'tom', 'max']
 };
-console.log(newArr);
-let parseArr = JSON.stringify(newArr);
-console.log(parseArr);
-console.log(JSON.parse(parseArr));
-let str = "Hello";
 
-// делает то же самое, что и
-// for (let char of str) alert(char);
-let str = "Hello";
-
-// делает то же самое, что и
-// for (let char of str) alert(char);
-
-let iterator = str[Symbol.iterator]();
-
+let iterator = newObj[Symbol.iterator]();
 while (true) {
     let result = iterator.next();
     if (result.done) break;
-    alert(result.value); // выводит символы один за другим
+    console.log(result.value);
 }
+
+
 // ==================================================================================================== //
 
 // ==================================================================================================== //
