@@ -286,22 +286,42 @@
 // делает то же самое, что и
 // for (let char of str) alert(char);
 
-let newObj = {
-    name: 'Alex',
-    age: 23,
-    weight: 25,
-    names: ['alex', 'tom', 'max']
-};
-
-let iterator = newObj[Symbol.iterator]();
-while (true) {
-    let result = iterator.next();
-    if (result.done) break;
-    console.log(result.value);
-}
-
+// let newObj = {
+//     name: 'Alex',
+//     age: 23,
+//     weight: 25,
+//     names: ['alex', 'tom', 'max']
+// };
+//
+// let iterator = newObj[Symbol.iterator]();
+// while (true) {
+//     let result = iterator.next();
+//     if (result.done) break;
+//     console.log(result.value);
+// }
 
 // ==================================================================================================== //
+var a = [3, 4, 10];
+var b = [5, 'hello', '10exe'];
+
+Array.prototype.double = function () {
+    var newArray = this.map(function (item) {
+        if (typeof item === 'number') {
+            return Math.pow(item, 2);
+        }
+
+        if (typeof item === 'string') {
+            return item += item;
+        }
+    });
+    return newArray;
+};
+
+var newA = a.double();
+var newB = b.double();
+
+console.log('A', newA);
+console.log('B', newB);
 
 // ==================================================================================================== //
 
