@@ -301,32 +301,93 @@
 // }
 
 // ==================================================================================================== //
-var a = [3, 4, 10];
-var b = [5, 'hello', '10exe'];
-
-Array.prototype.double = function () {
-    var newArray = this.map(function (item) {
-        if (typeof item === 'number') {
-            return Math.pow(item, 2);
-        }
-
-        if (typeof item === 'string') {
-            return item += item;
-        }
-    });
-    return newArray;
-};
-
-var newA = a.double();
-var newB = b.double();
-
-console.log('A', newA);
-console.log('B', newB);
-
-// ==================================================================================================== //
+// var a = [3, 4, 10];
+// var b = [5, 'hello', '10exe'];
+//
+// Array.prototype.double = function () {
+//     var newArray = this.map(function (item) {
+//         if (typeof item === 'number') {
+//             return Math.pow(item, 2);
+//         }
+//
+//         if (typeof item === 'string') {
+//             return item += item;
+//         }
+//     });
+//     return newArray;
+// };
+//
+// var newA = a.double();
+// var newB = b.double();
+//
+// console.log('A', newA);
+// console.log('B', newB);
 
 // ==================================================================================================== //
+// const person = {
+//     age: 25,
+//     firstName: 'Max',
+//     logName() {
+//         setTimeout(() => {
+//             console.log(this.firstName);
+//         },2000)
+//     }
+// };
+// console.log(person.logName());
+// ==================================================================================================== //
+// let arr = ['apple', 'banana', 'orange'];
+//
+// let breakfast = arr.map(fruit => {
+//     return fruit + 's';
+// });
+//
+// console.log(breakfast); // ['apples', 'bananas', 'oranges']
 
 // ==================================================================================================== //
+// const person = {
+//         age: 25,
+//         firstName: 'Max',
+//         name() {
+//             return this.firstName
+//         }
+//     }
+// ;
+// console.log(person.name);
+// ==================================================================================================== //
+// REST
+// function sum(...theArgs) {
+//     return theArgs.reduce((index, item) => {
+//         return index + item;
+//     })
+// }
+//
+// console.log(sum(1, 2, 3, 4, 5));
+// SPREAD
+// function sum(x, y, z) {
+//     return x + y + z;
+// }
+//
+// const numbers = [10, 2, 3];
+//
+// console.log(sum(...numbers));
+// // expected output: 6
+//
+// console.log(sum.apply(null, numbers));
+// // expected output: 6
+
+// Destructuring assignment
+let a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);
+// expected output: 10
+
+console.log(b);
+// expected output: 20
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
+// expected output: Array [30,40,50]
 // ==================================================================================================== //
 // ==================================================================================================== //
