@@ -408,7 +408,21 @@
 // calculator.read();
 // alert( calculator.sum() );
 // alert( calculator.mul() );
-
+const createPerson = (a, b) => {
+    return  {
+        name: function () {
+            return 'NAME'
+        },
+        firstName() {
+            return 'LAST'
+        },
+        lastName: () => ('HELLO'),
+        [a + b]: 100
+    }
+};
+const newPersone = createPerson('Hello', 'World');
+console.log(newPersone);
+console.log(`${createPerson('Java', 'Script')} + ${newPersone.name()} + ${newPersone.firstName()} + ${newPersone.lastName()}`);
 
 
 
