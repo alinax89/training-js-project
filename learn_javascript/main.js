@@ -424,9 +424,66 @@ const newPersone = createPerson('Hello', 'World');
 console.log(newPersone);
 console.log(`${createPerson('Java', 'Script')} + ${newPersone.name()} + ${newPersone.firstName()} + ${newPersone.lastName()}`);
 
+class  Name {
+    constructor(name) {
+        this.name = name;
+    }
+
+    logName() {
+        console.log('My name is: ' + this.name);
+    }
+    static staticFunc() {
+        console.log('Hello');
+    }
+}
+
+let newName = new Name('Andrey');
+newName.logName();
+Name.staticFunc();
+
+class LastName extends Name{
+    constructor(name) {
+        super(name);
+    }
+    logName() {
+        super.logName();
+        console.log('My last is: ' + this.name);
+    }
+}
+let lastName = new LastName('Ali');
+lastName.logName();
+
+let set = new Set();
+
+set.add(10);
+set.add('Hello');
+console.log(set.has('2'));
+console.log(set.size);
+
+function User(name) {
+    this.name = name;
+}
+
+let user = new User('Andrey');
+console.log(user.name);
+
 
 
 // ==================================================================================================== //
+var numbers = [2, 7, 1, 5, 7, 2, 5, 6, 3, 4];
+var strings = ['JS', 'is', 'not', 'awesome'];
+var data = [{i: 1}, {i: 2}, {i: 3}, {i: 4}, {i: 5}];
+var random = [undefined, 'str', null, 42, {data: data}];
+
+function remove(arr, ...args){
+    var set = new Set(args);
+    return arr.filter((v, k) => !set.has(k));
+}
+
+console.log(remove(strings, 2)); // ['JS', 'is', 'awesome']
+console.log(remove(numbers, 0, 2, 4)); // [7, 5, 2, 5, 6, 3, 4]
+console.log(remove(data, 1, 3, 4)); // [{i: 1}, {i: 3}]
+console.log(remove(random, 1, 3)); // [undefined, null, {data: [...]}]
 // ==================================================================================================== //
 // ==================================================================================================== //
 // ==================================================================================================== //
