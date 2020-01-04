@@ -360,20 +360,21 @@
 //         return index + item;
 //     })
 // }
-//
+// //
 // console.log(sum(1, 2, 3, 4, 5));
 // SPREAD ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // function sum(x, y, z) {
 //     return x + y + z;
 // }
 //
-// const numbers = [10, 2, 3];
+// const numbers = [10, 3, 3];
 //
-// console.log(sum(...numbers));
-// // expected output: 6
-//
-// console.log(sum.apply(null, numbers));
-// // expected output: 6
+// console.log(numbers);
+// console.log(sum(numbers));
+// expected output: 6
+
+// console.log(sum.call(null, ...numbers));
+// expected output: 6
 
 // Destructuring assignment
 // let a, b, rest;
@@ -470,20 +471,21 @@ console.log(user.name);
 
 
 // ==================================================================================================== //
-var numbers = [2, 7, 1, 5, 7, 2, 5, 6, 3, 4];
-var strings = ['JS', 'is', 'not', 'awesome'];
-var data = [{i: 1}, {i: 2}, {i: 3}, {i: 4}, {i: 5}];
-var random = [undefined, 'str', null, 42, {data: data}];
+// var strings = ['JS', 'is', 'not', 'awesome'];
+// var numbers = [2, 7, 1, 5, 7, 2, 5, 6, 3, 4];
+// var data = [{i: 1}, {i: 2}, {i: 3}, {i: 4}, {i: 5}];
+// var random = [undefined, 'str', null, 42, {data: data}];
+//
+// function remove(arr, ...args){
+//     var set = new Set(args);
+//     return arr.filter((v, k) => !set.has(k));
+// }
+//
+// console.log(remove(strings, 2)); // ['JS', 'is', 'awesome']
+// console.log(remove(numbers, 0, 2, 4)); // [7, 5, 2, 5, 6, 3, 4]
+// console.log(remove(data, 1, 3, 4)); // [{i: 1}, {i: 3}]
+// console.log(remove(random, 1, 3)); // [undefined, null, {data: [...]}]
 
-function remove(arr, ...args){
-    var set = new Set(args);
-    return arr.filter((v, k) => !set.has(k));
-}
-
-console.log(remove(strings, 2)); // ['JS', 'is', 'awesome']
-console.log(remove(numbers, 0, 2, 4)); // [7, 5, 2, 5, 6, 3, 4]
-console.log(remove(data, 1, 3, 4)); // [{i: 1}, {i: 3}]
-console.log(remove(random, 1, 3)); // [undefined, null, {data: [...]}]
 // ==================================================================================================== //
 // ==================================================================================================== //
 // ==================================================================================================== //
