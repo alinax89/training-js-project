@@ -409,65 +409,64 @@
 // calculator.read();
 // alert( calculator.sum() );
 // alert( calculator.mul() );
-const createPerson = (a, b) => {
-    return  {
-        name: function () {
-            return 'NAME'
-        },
-        firstName() {
-            return 'LAST'
-        },
-        lastName: () => ('HELLO'),
-        [a + b]: 100
-    }
-};
-const newPersone = createPerson('Hello', 'World');
-console.log(newPersone);
-console.log(`${createPerson('Java', 'Script')} + ${newPersone.name()} + ${newPersone.firstName()} + ${newPersone.lastName()}`);
-
-class  Name {
-    constructor(name) {
-        this.name = name;
-    }
-
-    logName() {
-        console.log('My name is: ' + this.name);
-    }
-    static staticFunc() {
-        console.log('Hello');
-    }
-}
-
-let newName = new Name('Andrey');
-newName.logName();
-Name.staticFunc();
-
-class LastName extends Name{
-    constructor(name) {
-        super(name);
-    }
-    logName() {
-        super.logName();
-        console.log('My last is: ' + this.name);
-    }
-}
-let lastName = new LastName('Ali');
-lastName.logName();
-
-let set = new Set();
-
-set.add(10);
-set.add('Hello');
-console.log(set.has('2'));
-console.log(set.size);
-
-function User(name) {
-    this.name = name;
-}
-
-let user = new User('Andrey');
-console.log(user.name);
-
+// const createPerson = (a, b) => {
+//     return  {
+//         name: function () {
+//             return 'NAME'
+//         },
+//         firstName() {
+//             return 'LAST'
+//         },
+//         lastName: () => ('HELLO'),
+//         [a + b]: 100
+//     }
+// };
+// const newPersone = createPerson('Hello', 'World');
+// console.log(newPersone);
+// console.log(`${createPerson('Java', 'Script')} + ${newPersone.name()} + ${newPersone.firstName()} + ${newPersone.lastName()}`);
+//
+// class  Name {
+//     constructor(name) {
+//         this.name = name;
+//     }
+//
+//     logName() {
+//         console.log('My name is: ' + this.name);
+//     }
+//     static staticFunc() {
+//         console.log('Hello');
+//     }
+// }
+//
+// let newName = new Name('Andrey');
+// newName.logName();
+// Name.staticFunc();
+//
+// class LastName extends Name{
+//     constructor(name) {
+//         super(name);
+//     }
+//     logName() {
+//         super.logName();
+//         console.log('My last is: ' + this.name);
+//     }
+// }
+// let lastName = new LastName('Ali');
+// lastName.logName();
+//
+// let set = new Set();
+//
+// set.add(10);
+// set.add('Hello');
+// console.log(set.has('2'));
+// console.log(set.size);
+//
+// function User(name) {
+//     this.name = name;
+// }
+//
+// let user = new User('Andrey');
+// console.log(user.name);
 
 
 // ==================================================================================================== //
@@ -487,6 +486,19 @@ console.log(user.name);
 // console.log(remove(random, 1, 3)); // [undefined, null, {data: [...]}]
 
 // ==================================================================================================== //
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let users = [ vasya, petya, masha ];
+
+// let names = users.map(item => item.name);
+let names = users.map(function (item) {
+    return item.name;
+});
+
+
+console.log( names ); // Вася, Петя, Маша
 // ==================================================================================================== //
 // ==================================================================================================== //
 // ==================================================================================================== //
