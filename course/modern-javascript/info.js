@@ -102,3 +102,29 @@ console.log(arrow('Arrow Function')); // Arrow Function
 (function (self) {
     return console.log(self);
 })(('Self-invoking Function')); // Self-invoking Function - anonymous
+
+
+const summ = (one) => {
+    return function (two) {
+        return function (three) {
+            return `${one} ${two} ${three}`
+        }
+    }
+};
+
+const  fullSumm = summ('one')('two')('three');
+console.log(fullSumm);
+
+
+function quest(job) {
+    const jobs = {
+        dev: 'What',
+        teac: 'Ok'
+    };
+    return function (name) {
+        return `${name}, ${jobs.dev}`
+    }
+}
+
+const dev = quest('dev');
+console.log(dev);
