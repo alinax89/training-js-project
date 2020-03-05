@@ -66,13 +66,13 @@ console.log(user.skills[2]); // JavaScript
 console.log(user.skills.join(' - ')); // HTML - CSS - JavaScript
 
 const teams = [
-    {club: 'Milan', country: 'Italy'},
-    {club: 'Barcelona', country: 'Spain'},
-    {club: 'Liverpool', country: 'England'},
-    {club: 'Bayern', country: 'Germany'},
-    {club: 'Juventus', country: 'Italy'},
-    {club: 'MC', country: 'England'},
-    {club: 'Real', country: 'Spain'},
+    {club: 'Milan', country: 'Italy', id: 0},
+    {club: 'Barcelona', country: 'Spain', id: 1},
+    {club: 'Liverpool', country: 'England', id: 2},
+    {club: 'Bayern', country: 'Germany', id: 3},
+    {club: 'Juventus', country: 'Italy', id: 4},
+    {club: 'MC', country: 'England', id: 5},
+    {club: 'Real', country: 'Spain', id: 6},
 ];
 
 for (let team in teams) {
@@ -112,19 +112,41 @@ const summ = (one) => {
     }
 };
 
-const  fullSumm = summ('one')('two')('three');
+const fullSumm = summ('one')('two')('three');
 console.log(fullSumm);
 
 
-function quest(job) {
-    const jobs = {
-        dev: 'What',
-        teac: 'Ok'
-    };
-    return function (name) {
-        return `${name}, ${jobs.dev}`
-    }
+const prod = {
+    name: 'Intel',
+    price: 200,
+    getName,
+    getPrice
 }
 
-const dev = quest('dev');
-console.log(dev);
+function getName(proc) {
+    console.log(proc + this.name)
+}
+
+function getPrice(currency) {
+    console.log(currency + this.price)
+}
+
+prod.getPrice('#');
+getPrice.call(prod, '$');
+getPrice.apply(prod, ['%']);
+setTimeout(prod.getName.bind(prod, 'CORE '), 1000);
+
+const arrFunc = (a, b = 10) => a * b;
+console.log(arrFunc(5));
+
+teams.forEach((club, i) => {
+    console.log(i + ' - ' + club.club);
+});
+
+console.log(teams.filter(club => club.id === 1));
+
+console.log(teams.map(club => club.country));
+
+const sum = teams.reduce((acc, club) => (acc += club.id), 0);
+
+console.log(sum);
