@@ -150,3 +150,29 @@ console.log(teams.map(club => club.country));
 const sum = teams.reduce((acc, club) => (acc += club.id), 0);
 
 console.log(sum);
+
+const teamsObj = teams.reduce((acc, club) =>  {
+    acc[club.id] = club;
+    return acc;
+}, {});
+
+console.log(teamsObj);
+
+const spain = teams.some(team => team.country.toLowerCase() === 'spain');
+console.log(spain);
+
+const spain1 = teams.every(team => team.club.toUpperCase() === 'SPAIN');
+console.log(spain1);
+
+const find = teams.find(team => team.club === 'Barcelona');
+console.log(find);
+
+const sort = teams.sort((prev, next) => prev.id - next.id);
+console.log(sort);
+
+
+
+
+
+
+
