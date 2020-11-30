@@ -14,13 +14,15 @@ const jsLoaders = () => {
         {
             loader: 'babel-loader',
             options: {
-                presets: ['@babel/preset-env']
+                presets: ['@babel/preset-env'],
+                plugins: ['@babel/plugin-proposal-class-properties']
             }
         }
     ];
     if (isDev) {
         loaders.push('eslint-loader')
     }
+    return loaders
 }
 
 module.exports = {
@@ -81,8 +83,8 @@ module.exports = {
                 ],
             },
             {
-                test: /\.m?js$/,
-                exclude: /(node_modules|bower_components)/,
+                test: /\.js$/,
+                exclude: /node_modules/,
                 use: jsLoaders()
             }
         ],
