@@ -26,7 +26,7 @@ Users should be able to:
 ### Links
 
 - [Solution URL](https://github.com/andreialisenok/Calculator)
-- [Live Site URL](https://clock-app-weld.vercel.app/)
+- [Live Site URL](https://calculator-drab-chi.vercel.app/)
 
 ## My process
 
