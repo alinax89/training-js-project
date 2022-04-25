@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;700&display=swap');
+
+[data-theme='dark'] {
+  --color-bg: #3A4663;
+
+  --text-color: #FFFFFF;
+
+  --toggles-bg: #242D44;
+  --toggle-color: #D03F2F;
+  --toggle-color-hover: #F96B5B;
+
+  --screen-bg: #181F33;
+
+  --numpad-bg: #242D44;
+
+  --number-color: #434A59;
+  --number-bg: #EAE3DC;
+  --number-bg-hover: #FFFFFE;
+  --number-shadow: 0 4px 0 0 #B3A497;
+
+  --del-color: #FFFFFF;
+  --del-bg: #647198;
+  --del-bg-hover: #A2B2E1;
+  --del-shadow: 0 4px 0 0 #414E73;
+
+  --reset-color: #FFFFFF;
+  --reset-bg: #647198;
+  --reset-bg-hover: #A2B2E1;
+  --reset-shadow: 0 4px 0 0 #414E73;
+
+  --equals-color: #FFFFFF;
+  --equals-bg: #D03F2F;
+  --equals-bg-hover: #F96B5B;
+  --equals-shadow: 0 4px 0 0 #93261A;
+}
+
+[data-theme='light'] {
+  --color-bg: #E6E6E6;
+
+  --text-color: #36362C;
+
+  --toggles-bg: #D2CDCD;
+  --toggle-color: #C85402;
+  --toggle-color-hover: #FF8A38;
+
+  --screen-bg: #EEEEEE;
+
+  --numpad-bg: #D2CDCD;
+
+  --number-color: #36362C;
+  --number-bg: #E5E4E1;
+  --number-bg-hover: #FFFFFF;
+  --number-shadow: 0 4px 0 0 #A79E91;
+
+  --del-color: #FFFFFF;
+  --del-bg: #378187;
+  --del-bg-hover: #62B5BC;
+  --del-shadow: 0 4px 0 0 #1B6066;
+
+  --reset-color: #FFFFFF;
+  --reset-bg: #378187;
+  --reset-bg-hover: #62B5BC;
+  --reset-shadow: 0 4px 0 0 #1B6066;
+
+  --equals-color: #FFFFFF;
+  --equals-bg: #C85402;
+  --equals-bg-hover: #FF8A38;
+  --equals-shadow: 0 4px 0 0 #873901;
+}
+
+[data-theme='neon'] {
+  --color-bg: #17062A;
+
+  --text-color: #FFE53D;
+
+  --toggles-bg: #1E0936;
+  --toggle-color: #00DED0;
+  --toggle-color-hover: #93FFF8;
+
+  --screen-bg: #1E0936;
+
+  --numpad-bg: #1E0936;
+
+  --number-color: #FFE53D;
+  --number-bg: #331C4D;
+  --number-bg-hover: #6C34AC;
+  --number-shadow: 0 4px 0 0 #881C9E;
+
+  --del-color: #FFFFFF;
+  --del-bg: #56077C;
+  --del-bg-hover: #8631AF;
+  --del-shadow: 0 4px 0 0 #BE15F4;
+
+  --reset-color: #FFFFFF;
+  --reset-bg: #56077C;
+  --reset-bg-hover: #8631AF;
+  --reset-shadow: 0 4px 0 0 #BE15F4;
+
+  --equals-color: #1A2327;
+  --equals-bg: #00DED0;
+  --equals-bg-hover: #93FFF8;
+  --equals-shadow: 0 4px 0 0 #6CF9F1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Spartan', sans-serif;
+  font-weight: 700;
+  font-size: 3.2rem;
+  background: var(--color-bg);
+  transition: all 0.3s linear;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  -webkit-clip-path: inset(100%);
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 20px;
+}
+
+.app {
+  width: 330px;
+  @media (min-width: 768px) {
+    width: 540px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    color: var(--text-color);
+  }
+
+  &__theme {
+    display: flex;
+  }
+
+
+  &__subtitle {
+    font-family: 'Spartan', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin-right: 20px;
+    margin-top: 25px;
+    color: var(--text-color);
+  }
+
+  &__numbers {
+    color: var(--text-color);
+    display: flex;
+    max-width: 50px;
+    justify-content: space-between;
+    margin: 0 auto 5px;
+  }
+
+  &__item {
+    color: var(--text-color);
+    font-family: 'Spartan', sans-serif;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+  &__toggles {
+    position: relative;
+    width: 70px;
+    height: 26px;
+    padding: 5px;
+    border-radius: 50px;
+    background: var(--toggles-bg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__toggle {
+    display: block;
+    cursor: pointer;
+    -webkit-appearance: none;
+    &::before {
+      border-radius: 50px;
+      content: '';
+      display: block;
+      height: 16px;
+      width: 16px;
+    }
+    &:checked:before {
+      transition: background 0.3s linear;
+      background: var(--toggle-color);
+    }
+  }
+  &__screen {
+    background: var(--screen-bg);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    height: 115px;
+  }
+
+  &__previous {
+    color: var(--text-color);
+    font-family: 'Spartan', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: right;
+    margin-bottom: 15px;
+    opacity: 0.7;
+  }
+
+  &__current {
+    color: var(--text-color);
+    font-family: 'Spartan', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: right;
+    line-height: 1.2;
+    overflow-x: auto;
+  }
+
+  &__numpad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+    background: var(--numpad-bg);
+    padding: 25px;
+    border-radius: 10px;
+    @media (min-width: 768px) {
+      grid-gap: 25px;
+    }
+  }
+
+  &__button {
+    color: var(--number-color);
+    background: var(--number-bg);
+    border: none;
+    border-radius: 5px;
+    font-family: 'Spartan', sans-serif;
+    font-weight: 700;
+    box-shadow: var(--number-shadow);
+    cursor: pointer;
+    font-size: 2.8rem;
+    height: 60px;
+    transition: var(--transition);
+
+    &:hover {
+      background: var(--number-bg-hover)
+
+    }
+
+    &:active {
+      box-shadow: none;
+      transform: translateY(4px);
+    }
+
+    @media (min-width: 768px) {
+      font-size: 3.2rem;
+    }
+
+    &--del,
+    &--reset,
+    &--equals {
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      @media (min-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+
+    &--reset {
+      grid-column: 1/3;
+    }
+
+    &--equals {
+      color: var(--equals-color);
+      background: var(--equals-bg);
+      box-shadow: var(--equals-shadow);
+      grid-column: 3/5;
+
+      &:hover {
+        background: var(--equals-bg-hover);
+      }
+    }
+
+    &--del {
+      color: var(--del-color);
+      background: var(--del-bg);
+      box-shadow: var(--del-shadow);
+
+      &:hover {
+        background: var(--del-bg-hover);
+      }
+    }
+
+    &--reset {
+      color: var(--reset-color);
+      background: var(--reset-bg);
+      box-shadow: var(--reset-shadow);
+
+      &:hover {
+        background: var(--reset-bg-hover);
+      }
+    }
+  }
+}

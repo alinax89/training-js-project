@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link rel="shortcut icon" href="src/img/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="src/css/main.css">
+</head>
+<body data-theme="dark" id="theme">
+<div class="wrap">
+    <div class="app">
+        <div class="app__nav">
+            <h1 class="app__title">calc</h1>
+            <div class="app__theme">
+                <h2 class="app__subtitle">theme</h2>
+                <div class="app__switcher">
+                    <div class="app__numbers">
+                        <span class="app__item">1</span>
+                        <span class="app__item">2</span>
+                        <span class="app__item">3</span>
+                    </div>
+                    <div class="app__toggles">
+                        <label for="dark-theme">
+                            <input class="app__toggle" data-theme="dark" type="radio" id="dark-theme" name="theme" checked>
+                        </label>
+
+                        <label for="light-theme">
+                            <input class="app__toggle" data-theme="light" type="radio" id="light-theme" name="theme">
+                        </label>
+                        <label for="neon-theme">
+                            <input class="app__toggle" data-theme="neon" type="radio" id="neon-theme" name="theme">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="app__screen">
+            <div class="app__previous"></div>
+            <div class="app__current">0</div>
+        </div>
+        <div class="app__numpad">
+            <button data-number class="app__button">7</button>
+            <button data-number class="app__button">8</button>
+            <button data-number class="app__button">9</button>
+            <button data-delete class="app__button app__button--del">del</button>
+            <button data-number class="app__button">4</button>
+            <button data-number class="app__button">5</button>
+            <button data-number class="app__button">6</button>
+            <button data-operand class="app__button">+</button>
+            <button data-number class="app__button">1</button>
+            <button data-number class="app__button">2</button>
+            <button data-number class="app__button">3</button>
+            <button data-operand class="app__button">-</button>
+            <button data-dot class="app__button">.</button>
+            <button data-number class="app__button">0</button>
+            <button data-operand class="app__button">/</button>
+            <button data-operand class="app__button">x</button>
+            <button data-reset class="app__button app__button--reset">reset</button>
+            <button data-equals class="app__button app__button--equals">=</button>
+        </div>
+    </div>
+</div>
+<script src="src/js/main.js"></script>
+</body>
+</html>
